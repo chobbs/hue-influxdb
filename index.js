@@ -64,8 +64,6 @@ function hueLights() {
     console.log("Fetch updated IoT values...");
     api.lights(function (err, lights) {
         if (err) throw err;
-        //var myObjStr = JSON.stringify(lights, null, 2);
-        //var obj = JSON.parse(myObjStr);
 
         writeMeasure(lights);
     });
