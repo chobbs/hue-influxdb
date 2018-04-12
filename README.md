@@ -44,6 +44,20 @@ const influx = new Influx.InfluxDB({
 ```
 ```js
 
+Phillips Developer API, Fetch an update on the state of your home smart lights
+
+function hueLights() {
+    console.log("Fetch updated IoT values...");
+    api.lights(function (err, lights) {
+        if (err) throw err;
+
+        writeMeasure(lights);
+    });
+}
+
+```
+```js
+
 Collect and write new measurements to your InfluxDB schema(hue)
 
 function writeMeasure (obj) {
