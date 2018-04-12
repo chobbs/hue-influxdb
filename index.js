@@ -42,7 +42,6 @@ const influx = new Influx.InfluxDB({
 //Debug-only console print message
 
 var displayResult = function(result) {
-    var myObjStr = JSON.stringify(result, null, 2);
     console.log(JSON.stringify(result, null, 2));
 
 };
@@ -55,7 +54,7 @@ var displayResult = function(result) {
         if (--i) {          // If i > 0, keep going
             checkLights(i);       // Call the loop again, and pass it the current value of i
         }
-    }, 60000);
+    }, 3000);
 })(10);
 
 
@@ -65,11 +64,10 @@ function hueLights() {
     console.log("Fetch updated IoT values...");
     api.lights(function (err, lights) {
         if (err) throw err;
-        //displayResult(lights);
-        var myObjStr = JSON.stringify(lights, null, 2);
-        var obj = JSON.parse(myObjStr);
+        //var myObjStr = JSON.stringify(lights, null, 2);
+        //var obj = JSON.parse(myObjStr);
 
-        writeMeasure(obj);
+        writeMeasure(lights);
     });
 }
 
