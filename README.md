@@ -44,7 +44,7 @@ const influx = new Influx.InfluxDB({
 ```
 ```js
 
-Phillips Developer API, Fetch an update on the state of your home smart lights
+Phillips HUE API, Fetch an update on the state of your home smart lights
 
 function hueLights() {
     console.log("Fetch updated IoT values...");
