@@ -49,8 +49,8 @@ var displayResult = function(result) {
 
 //  Checking smart lights (1) every min for 10mins.
 (function checkLights (i) {
-    console.log("Checking smart lights --> " + timeStamp());
     setTimeout(function () {
+        console.log("Checking smart lights --> " + timeStamp());
         hueLights();
         if (--i) {          // If i > 0, keep going
             checkLights(i);       // Call the loop again, and pass it the current value of i
